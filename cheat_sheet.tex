@@ -3,18 +3,19 @@
 \usepackage{hyperref}
 \usepackage{amsmath}
 \usepackage{color,soul}
-\usepackage[a4paper,bindingoffset=0.2in,%
-            left=0.2in,right=0.2in,top=0.2in,bottom=0.2in,%
-            footskip=0in]{geometry}
-\usepackage{multicol}
+\usepackage[a4paper,bindingoffset=0.05in,%
+            left=0.05in,right=0.05in,top=0.05in,bottom=0.05in,%
+            footskip=0.05in]{geometry}
+% \usepackage{multicol}
 
 
 \begin{document}
 
+\scriptsize
 \paragraph{Basics}
 \begin{itemize}
 	\item dot product: $\underline{a} \cdot \underline{b} = a_1 b_1 + a_2b_2 + ... = |\underline{a}| |\underline{b}| \cos{\theta} $, $W = \underline{F} \cdot \underline{d}$ where F is force and d is distance
-	\item Cross Product: $\underline{v} \times \underline{w} = \begin{vmatrix} ]
+	\item Cross Product: $\underline{v} \times \underline{w} = \begin{vmatrix} 
 																	i & -j & k \\ 
 																	v_1 & v_2 & v_3 \\ 
 																	w_1 & w_2 & W_3 \notag
@@ -25,33 +26,79 @@
 	\item \textbf{projection \underline{a} onto \underline{b}}: $Proj_{\underline{b}}(\underline{a}) = {\underline{a}_{\underline{b}}} = (\underline{a} \cdot \frac{\underline{a}}{|\underline{b}|})\frac{\underline{b}}{|\underline{b}|})$
 \end{itemize}
 
-\paragraph{Parametrization}
+\paragraph{Parametrization and Tangents to planes ...}
 \begin{itemize}
 	\item \textbf{Curve}: $R^2$ : $\underline{r} = (x(t), y(t))$ ; $R^3$ : $\underline{r} = (x(t), y(t), z(t))$
 	\item \textbf{Tangent line at $t = t_0$}: $L(s) = \underline{r}(t_0) + s\underline{r^`}(t_0)$
-	\item ...
+	\item \textbf{Tangent plane of graph at $(a, b, f(a, b))$}: $z = f(a, b) + f_x(a, b)(x - a) + f_x(a, b)(y - b)$
 \end{itemize}
+
+
+\paragraph{Parametrized Surface ($\underline{r}(u, v)$) and Curve and regular parametrization}
+\begin{itemize}
+	\item $\underline{r_u}(u_0, v_0)$ and $\underline{r_v}(u_0, v_0)$ are two vectors parallel to the plane tangent to the surface at $\underline{r}(u_0, v_0)$
+	\item  $\underline{n} =\underline{r_u}(u_0, v_0) \times \underline{r_v}(u_0, v_0)$ is a vector normal to the above tangent plane, if $\underline{n} \neq \underline{0}$ then the parametrization is regular at $\underline{r}(u_0, v_0)$
+	\item Tangent plane can be written in two ways: 
+	\begin{itemize}
+		\item As a parametrization: $(x, y, z) = \underline{r}(u_0, v_0) + a\underline{r_u}(u_0, v_0) + b\underline{r_v}(u_0, v_0)$
+		\item As a level set (Standard equation): $\underline{n} \cdot ((x, y, z) - \underline{r}(u_0, v_0)) = 0$
+	\end{itemize}		
+	\item \textbf{cylinder}: $\underline{r}(\theta, z) = (R\cos(\theta), R\sin(\theta), z)$
+	\item \textbf{sphere}: $\underline{r}(\theta, \phi) = (R\sin(\phi)\cos(\theta), R\sin(\phi)\sin(\theta), R\cos(\phi))$
+	\item \textbf{graph $z = f(x, y)$}: $\underline{r}(x, y) = (x, y, f(x, y))$
+
+\end{itemize}
+
 
 \paragraph{Surfaces and Gradient vectors}
+	\begin{itemize}
+		\item \textbf{Common surfaces}:
+			% \begin{multicols}{2}
+			\begin{itemize}
+				\item \textbf{Bowl/cup}: $z = x^2 + y^2$ 
+				\item \textbf{Saddle}: $z = x^2 - y^2$ 
+				\item \textbf{Sphere}: $x^2 + y^2 + z^2 = R^2$ 
+				\item \textbf{Cone}: $z = \underline{+} c\sqrt{x^2 + y^2}$
+				\item \textbf{Cylinder}: $x^2 + y^2 = R^2$ 
+				\item \textbf{Plane}: $ax + by + cz = d$
+			\end{itemize}
+			% \end{multicols}
+	\end{itemize}
+
+\paragraph{Level sets}
+			\begin{itemize}
+				\item \textbf{level set of $f(x, y)$ is a curve in the xy-plane: $f(x, y) = const$}
+				\item \textbf{level set of $f(x, y, z)$ is a graph in the xyz-plane: $f(x, y, z) = const$}
+			\end{itemize}
+
+
+
+\paragraph{Gradient Vector $\nabla f = (f_{x_1}, f_{x_2}, ..., f_{x_n}) $}
+
+	\begin{itemize}
+			\item Maximum increase: the direction: direction of $\nabla f$ ; the rate:  $|\nabla f|$
+			\item Minimum increase: opposite direction of $\nabla f$ ; the rate:  $- |\nabla f|$
+			\item No change: the normal to $\nabla f$
+			\item Rate of change in direction $\hat{u}$: \textbf{directional derivative} $D_{\hat{u}}f(\underline{p}) = \nabla f(\underline{p})  \cdot \hat{u}$
+			\item $\nabla f$ is normal to level sets 
+			\item Tangent set to level set at \underline{p} : $\nabla f(\underline{p})  \cdot (\underline{x} - \underline{p}) = 0$
+	\end{itemize} 
+
+\paragraph{Linear approximation, tangent plane, Local minimum and Maximum (optimization)}
 \begin{itemize}
-	\item \textbf{Common surfaces}:
-		% \begin{multicols}{2}
-		\begin{itemize}
-			\item \textbf{Bowl/cup}: $z = x^2 + y^2$ 
-			\item \textbf{Saddle}: $z = x^2 - y^2$ 
-			\item \textbf{Sphere}: $x^2 + y^2 + z^2 = R^2$ 
-			\item \textbf{Cone}: $z = \underline{+} c\sqrt{x^2 + y^2}$
-			\item \textbf{Cylinder}: $x^2 + y^2 = R^2$ 
-			\item \textbf{Plane}: $ax + by + cz = d$
-		\end{itemize}
-		% \end{multicols}
-\end{itemize}
-
-\paragraph{Gradient Vector $$}
+			\item \textbf{Linearization}: $L(\underline{x}) = f(\underline{p}) + \nabla f(\underline{p}) \cdot (\underline{x} - \underline{p})$
+			\item \textbf{Linear Approximation} : $f(\underline{x}) = L(\underline{x})$
+			\item \textbf{Critical Points}: $\nabla f(\underline{p})= \underline{0}$
+			\item \textbf{Second derivative test}: $D = f_{xx}f_{yy} - (f_{xy})^2$ at point \underline{p} 
+				\begin{itemize}
+					\item If $D > 0$ and  ($f_{xx} > 0$  or $f_{yy} > 0$), then \underline{p} is a local min
+					\item If $D > 0$ and  ($f_{xx} < 0$  or $f_{yy} < 0$), then \underline{p} is a local max
+					\item If $D < 0$  then \underline{p} is a saddle point
+				\end{itemize} 
+			\item \textbf{chain rule}: $f = f(\underline{x}) , x_i = x_i(\underline{t})$ then $\frac{\partial{f}}{\partial{t_i}} = \nabla f(\underline{x}) \cdot  \frac{\partial{\underline{x}}}{\partial{t_i}}$ 
 
 
-
-
+\end{itemize} 
 
 
 \end{document}		
