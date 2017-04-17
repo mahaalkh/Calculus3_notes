@@ -1,4 +1,4 @@
-\documentclass[10pt, twocolumn]{article}
+\documentclass[8pt, twocolumn]{article}
 \usepackage{graphicx}
 \usepackage{hyperref}
 \usepackage{amsmath}
@@ -6,6 +6,8 @@
 \usepackage[a4paper,bindingoffset=0.2in,%
             left=0.2in,right=0.2in,top=0.2in,bottom=0.2in,%
             footskip=0in]{geometry}
+\usepackage{multicol}
+
 
 \begin{document}
 
@@ -20,9 +22,33 @@
 	\item The area of the quadrilateral which the vectors are enclosing is the determinant of the cross product
 	\item Vector equation of line : $(x, y, z) = (x_0, y_0, z_0) + t (a, b, c)$; where $(a, b, c)$ is a vector parallel to the line and $(x_0, y_0, z_0)$ is a point on the line
 	\item Standard equation of line/plane: $\underline{n} \cdot ((x, y, z) - (x_0, y_0, z_0)) = 0$, where $\underline{n}$ is a vector normal to the line/plane
+	\item \textbf{projection \underline{a} onto \underline{b}}: $Proj_{\underline{b}}(\underline{a}) = {\underline{a}_{\underline{b}}} = (\underline{a} \cdot \frac{\underline{a}}{|\underline{b}|})\frac{\underline{b}}{|\underline{b}|})$
 \end{itemize}
 
 \paragraph{Parametrization}
+\begin{itemize}
+	\item \textbf{Curve}: $R^2$ : $\underline{r} = (x(t), y(t))$ ; $R^3$ : $\underline{r} = (x(t), y(t), z(t))$
+	\item \textbf{Tangent line at $t = t_0$}: $L(s) = \underline{r}(t_0) + s\underline{r^`}(t_0)$
+	\item ...
+\end{itemize}
+
+\paragraph{Surfaces and Gradient vectors}
+\begin{itemize}
+	\item \textbf{Common surfaces}:
+		% \begin{multicols}{2}
+		\begin{itemize}
+			\item \textbf{Bowl/cup}: $z = x^2 + y^2$ 
+			\item \textbf{Saddle}: $z = x^2 - y^2$ 
+			\item \textbf{Sphere}: $x^2 + y^2 + z^2 = R^2$ 
+			\item \textbf{Cone}: $z = \underline{+} c\sqrt{x^2 + y^2}$
+			\item \textbf{Cylinder}: $x^2 + y^2 = R^2$ 
+			\item \textbf{Plane}: $ax + by + cz = d$
+		\end{itemize}
+		% \end{multicols}
+\end{itemize}
+
+\paragraph{Gradient Vector $$}
+
 
 
 
