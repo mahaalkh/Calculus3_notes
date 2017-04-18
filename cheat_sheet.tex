@@ -7,6 +7,7 @@
             left=0.05in,right=0.05in,top=0.05in,bottom=0.05in,%
             footskip=0.05in]{geometry}
 % \usepackage{multicol}
+\usepackage{physics}
 
 
 \begin{document}
@@ -36,6 +37,7 @@
 
 \paragraph{Parametrized Surface ($\underline{r}(u, v)$) and Curve and regular parametrization}
 \begin{itemize}
+	\item $\underline{r}(u, v) = (x(u, v), y(u, v), z(u, v))$
 	\item $\underline{r_u}(u_0, v_0)$ and $\underline{r_v}(u_0, v_0)$ are two vectors parallel to the plane tangent to the surface at $\underline{r}(u_0, v_0)$
 	\item  $\underline{n} =\underline{r_u}(u_0, v_0) \times \underline{r_v}(u_0, v_0)$ is a vector normal to the above tangent plane, if $\underline{n} \neq \underline{0}$ then the parametrization is regular at $\underline{r}(u_0, v_0)$
 	\item Tangent plane can be written in two ways: 
@@ -67,7 +69,7 @@
 				\item \textbf{Bowl/cup}: $z = x^2 + y^2$ 
 				\item \textbf{Saddle}: $z = x^2 - y^2$ 
 				\item \textbf{Sphere}: $x^2 + y^2 + z^2 = R^2$ 
-				\item \textbf{Cone}: $z = \underline{+} c\sqrt{x^2 + y^2}$
+				\item \textbf{Cone}: $z = \pm c\sqrt{x^2 + y^2}$
 				\item \textbf{Cylinder}: $x^2 + y^2 = R^2$ 
 				\item \textbf{Plane}: $ax + by + cz = d$
 			\end{itemize}
@@ -110,12 +112,58 @@
 
 \begin{itemize}
 	\item \textbf{Rectangular Coordinates $(x, y, z)$}
-
-
+		\begin{itemize}
+			\item \textbf{to cylindrical} : $x = r\cos{\theta}$ , $y = r\sin{\theta}$ , $z = z$
+			\item \textbf{from cylindrical} : $r = \sqrt{x^2 + y^2}$, $\theta = \tan^{-1}({\frac{y}{x}})$, $z = z$
+			
+		\end{itemize}
 	\item \textbf{Cylinder Coordinates $(\theta, r, z)$}
+		\begin{itemize}
+			\item \textbf{from spherical} : $r = \rho\cos{\phi}$ , $z = \rho\sin{\phi}$ , $\theta = \theta$
+			\item \textbf{to spherical} : $\rho = \sqrt{r^2 + z^2}$ , $\phi \tan^{-1}({\frac{r}{z}}$ , $\theta = \theta$
+		\end{itemize}
+
 	\item \textbf{Spherical Coordinates$(\phi, \theta, \rho)$}
+		\begin{itemize}
+			\item \textbf{from rectangular} : $\rho = \sqrt{x^2 + y^2 + z^2}$, $\phi = \tan^{-1}({\frac{\sqrt{x^2 + y^2}}{z}})$, $\theta = \tan^{-1}({\frac{y}{x}})$
+			\item \textbf{to rectangular} : $x = \rho\sin{\phi}\cos{\theta}$ $y = \rho\sin{\phi}\sin{\theta}$ $z = \rho\cos{\phi}$
+		\end{itemize}
 
 \end{itemize} 
 
+\paragraph{Surface Area, Area, Volume, Mass, ...}
+\begin{itemize}
+	\item \textbf{$R^2$ Area elements $d{A}$}
+		\begin{itemize}
+			\item \textbf{Cartesian$(x, y)$} $dA = dx dy$
+			\item \textbf{Polar$(\theta, r)$} $dA = r dr d\theta$
+		\end{itemize}
+	\item \textbf{$R^3$ Volume elements $d{V}$}
+		\begin{itemize}
+			\item \textbf{Cartesian$(x, y), z$} $dV = dx dy dz$
+			\item \textbf{Cylindrical$(\theta, r, z)$} $dV = r dr d\theta dz$			
+			\item \textbf{Spherical$(\theta, \rho, \phi)$} $dV = \rho^2 \sin{\phi} d\rho d\phi d\theta$
+		\end{itemize}	
+	\item \textbf{Surface Area element $(dS)$ / Surface Area}
+		\begin{itemize}
+
+			\item \textbf{Surface Area element}: $dS = |\underline{r_u} \times \underline{r_u}| du dv$
+				\begin{itemize}
+					\item \textbf{Graph $z = f(x, y)$}: $\underline{r}(x, y) = (x, y, f(x, y))$ $dS = \sqrt{{f_x}^2 + {f_y}^2 + 1} $
+					\item \textbf{Sphere $\underline{r}(\theta, \phi) = (R\sin(\phi)\cos(\theta), R\sin(\phi)\sin(\theta), R\cos(\phi))$}: $dS = R^2\sin{\phi}d\phi d\theta$
+					\item \textbf{Cylinder $\underline{r}(\theta, z) = (R\cos(\theta), R\sin(\theta),z)$}: $dS = Rdz d\theta$
+				\end{itemize}
+			\item \textbf{Surface Area}: $\int\int_D{dS} = \int\int_D{dS}$  $\int\int_D{|\underline{r_u} \times \underline{r_u}| du dv} $
+
+		\end{itemize}
+	\item \textbf{Mass} given a density $\delta_ar(x, y)$ in  $R^2$ or $\delta(x, y, z)$ in $R^3$  the mass is: 
+		\begin{itemize}
+		\end{itemize}
+
+
+	
+
+
+\end{itemize}
 
 \end{document}		
