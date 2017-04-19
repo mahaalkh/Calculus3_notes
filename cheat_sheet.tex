@@ -5,14 +5,16 @@
 \usepackage{color,soul}
 \usepackage[a4paper,bindingoffset=0.05in,%
             left=0.05in,right=0.05in,top=0.05in,bottom=0.25in,%
-            footskip=0.1in]{geometry}
-% \usepackage{multicol}
+            footskip=1in]{geometry}
+\usepackage{multicol}
 \usepackage{physics}
 
 
 \begin{document}
 
-\tiny
+\footnotesize
+% \tiny
+% \small	
 \paragraph{Basics}
 \begin{itemize}
 	\item dot product: $\underline{a} \cdot \underline{b} = a_1 b_1 + a_2b_2 + ... = |\underline{a}| |\underline{b}| \cos{\theta} $, $W = \underline{F} \cdot \underline{d}$ where F is force and d is distance
@@ -64,7 +66,7 @@
 \paragraph{Surfaces and Gradient vectors}
 	\begin{itemize}
 		\item \textbf{Common surfaces}:
-			% \begin{multicols}{2}
+			\begin{multicols}{2}
 			\begin{itemize}
 				\item \textbf{Bowl/cup}: $z = x^2 + y^2$ 
 				\item \textbf{Saddle}: $z = x^2 - y^2$ 
@@ -73,7 +75,7 @@
 				\item \textbf{Cylinder}: $x^2 + y^2 = R^2$ 
 				\item \textbf{Plane}: $ax + by + cz = d$
 			\end{itemize}
-			% \end{multicols}
+			\end{multicols}
 	\end{itemize}
 
 \paragraph{Level sets}
@@ -153,7 +155,7 @@
 					\item \textbf{Sphere $\underline{r}(\theta, \phi) = (R\sin(\phi)\cos(\theta), R\sin(\phi)\sin(\theta), R\cos(\phi))$}: $dS = R^2\sin{\phi}d\phi d\theta$
 					\item \textbf{Cylinder $\underline{r}(\theta, z) = (R\cos(\theta), R\sin(\theta),z)$}: $dS = Rdz d\theta$
 				\end{itemize}
-			\item \textbf{Surface Area}: $\int\int_D{dS} = \int\int_D{dS}$  $\int\int_D{|\underline{r_u} \times \underline{r_u}| du dv} $
+			\item \textbf{Surface Area}: $\int\int_D{dS} = \int\int_D{dS}$  $\int\int_D{|\underline{r_u} \times \underline{r_v}| du dv} $
 		\end{itemize}
 	\item \textbf{Mass} given a density $\delta_ar(x, y)$ in  $R^2$ or $\delta(x, y, z)$ in $R^3$  the mass is: 
 		\begin{itemize}
@@ -162,8 +164,31 @@
 
 \end{itemize}
 
-\paragraph{Vector Fields, Line Integral (work), Conservative Field, Flux, the 3 big theorems}
+\paragraph{Vector Fields, Line Integral (work), Conservative Field, Flux}
+\begin{itemize}
+	\item \textbf{Vector Field} : $R^2 : \underline{F}(\underline{x})  = (P(x, y), Q(x, y))$  $R^3: \underline{F}(\underline{x})  = (P(x, y, z), Q(x, y, z),  R(x, y, z))$
+	\item \textbf{Divergence}:  $div\underline{F} = \nabla \cdot \underline{F}$ , \textbf{curl}:  $curl\underline{F} = \nabla \times \underline{F}$ in 2d : $curl = Q_x - P_y$
+	\item \textbf{Line integral (work)} of \underline{F} = (P, Q, R) along a path (C) and parametrized by $\underline{r}(t) = (x(t), y(t))$ $t: a \rightarrow b$ 	
+	$$\int_c{\underline{F} \cdot d\underline{r}} = \int_a^b{\underline{F}(\underline{r}(t)) \cdot \underline{r}^`(t) dt}$$
+	\item \textbf{Conservative Field $\nabla \cdot \underline{F} = \underline{0}$ (curl is 0)} : 
+		\begin{itemize}
+			\item[*] $\underline{F} = \nabla f$ where $f$ is called the potential function , find $f$ by integrating 
+			\item[*] \textbf{line integral} becomes path independent (fundamental theorem of line integrals) $\int_c{\underline{F} \cdot d\underline{r}} = f(\underline{b}) - f(\underline{a})$ where a and b are the points that path starts and ends from
+		\end{itemize}
+	\item  \textbf{Flux of a vector field \underline{F} through surface \textbf{M}}: $$Flux = \int\int_M{\underline{V} \cdot d\underline{S}} = \int\int_M{\underline{V} \cdot \hat{n} dS} = \int\int_D{\underline{V}(\underline{r}(u, v)) \cdot |\underline{r_u} \times \underline{r_v}| du dv}$$
+\end{itemize}
 
+\paragraph{The three theorems for calculating work (line integral) and flux (all assume closed integrals)} 
+\begin{itemize}
+	\item[] \textbf{Green's Theorem (line integral)} : $\int_{\partial{R}}{\underline{F} \cdot d\underline{r}} = \int\int_R{(Q_x - P_y) dA}$
+	\item[] \textbf{Divergence Theorem (flux)} : $\int\int_{\partial{E}}{\underline{F} \cdot \hat{n} dS} = \int\int\int_E{(\nabla \cdot \underline{F}) dV} $
+	\item[] \textbf{Stoke's Theorem  (line integral)} : $\int_{\partial{R}}{\underline{F} \cdot d\underline{r}} = \int\int_M{(\nabla \times \underline{F}) \cdot \hat{n} dS}$	
 
+\end{itemize}
+
+\begin{itemize}
+	\item For green's theorem, may have to add paths to close the path, for divergence theorem, may have to add surfaces
+	\item Corollary to stoke's theorem: two surfaces sharing the same boundary have the same line integral
+\end{itemize}
 
 \end{document}	
